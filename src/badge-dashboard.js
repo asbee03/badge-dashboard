@@ -63,7 +63,7 @@ class BadgeDashboard extends LitElement {
       overflow: hidden;
       position: relative;
       font-weight: 400;
-      font-size: 12px;
+      font-size: 15px;
       margin-bottom: 10px;
     }
 
