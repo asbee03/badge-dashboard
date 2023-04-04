@@ -6,6 +6,7 @@ export default async function handler(request, res) {
             "badgePic": "https://badgesapp.psu.edu/uploads/badge/image/337/APA_Style.png",
             "badgeTitleName": "APA Style Citations: Introduction",
             "badgeCreatorName": "Abhi Shah"
+            
         }
     ];
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');
