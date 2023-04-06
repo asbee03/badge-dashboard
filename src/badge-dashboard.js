@@ -100,7 +100,7 @@ class BadgeDashboard extends LitElement {
     super();
     this.badgeTopTitle = "Technology & Information";
     this.badgePic =
-      "https://badgesapp.psu.edu/uploads/badge/image/337/APA_Style.png";
+      "../assets/badge1.png";
     this.badgeTitleName = "APA Style Citations: Introduction";
     this.badgeCreatorName = "Abhi Shah";
   }
