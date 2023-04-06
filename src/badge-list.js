@@ -23,7 +23,6 @@ export class Badges extends LitElement{
 
     updateRoster(search) {
         console.log(search);
-         // you need to pass search to the endpoint
         const address = new URL('../assets/badge-map.json', import.meta.url).href;
         fetch(address).then((response) => {
             if (response.ok) {
