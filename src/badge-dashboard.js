@@ -94,20 +94,34 @@ class BadgeDashboard extends LitElement {
       font-weight: 400;
       font-size: 13px;
     }
+    /*.box{
+      width: 200px;
+      height: 100px;
+      border: 1px solid black;
+      }*/
+      .container {
+        position: absolute;
+        height: 250px;
+        width: 400px;
+        background-color: #ffffff;
+      }
   `;
 
   constructor() {
     super();
     this.badgeTopTitle = "Technology & Information";
     this.badgePic =
-      "../assets/badge1.png";
+      "https://badges.psu.edu/wp-content/uploads/sites/4454/2015/04/mortar_board_badge.png";
     this.badgeTitleName = "APA Style Citations: Introduction";
     this.badgeCreatorName = "Abhi Shah";
   }
 
+
   render() {
     return html`
       <main>
+      <div class="container"></div>
+      
         <div class="badge-all">
           <div class="badge-top">
             <span class="badge-top-title">${this.badgeTopTitle}</span>
