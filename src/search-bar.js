@@ -4,7 +4,7 @@ import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
 
 
 
-// old search bar
+
  class Searchbar extends LitElement {
    static properties = {
 	value: { type: String },
@@ -44,6 +44,7 @@ handleInput(e){
   })); 
 }
 
+//harder search bar 
 
    //static styles = css`
      //.searchbar {
