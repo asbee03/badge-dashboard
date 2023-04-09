@@ -41,7 +41,7 @@ body {
       text-align: left;
       font-family: "Effra", sans-serif;
       font-size: 30px;
-      color: #333333;
+      color: #000000;
       font-weight: lighter;
       padding-left: 50px;
     }

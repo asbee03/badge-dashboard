@@ -15,7 +15,7 @@ class SearchBar extends LitElement {
     .searchbar {
       box-shadow: 1px 1px 1px 2px gray;
       margin-top: 5px;
-      width: 1000px;
+      width: 1300px;
       border-radius: 5px;
       padding: 2px;
       
@@ -26,7 +26,7 @@ class SearchBar extends LitElement {
       border-radius: 5px;
     }
     .icon{
-      width:100spx;
+      width:100px;
     }
   `;
 
