@@ -4,25 +4,29 @@
         "header": "Technology & Information",
         "title": "APA Style Citations: Introduction",
         "img": "icons:book",
-        "creator": "Abhi Shah"
+        "creator": "Abhi Shah",
+        "color": "blue"
     },
     {
         "header": "Education",
         "title": "IST Career Sources",
         "img": "icons:work",
-        "creator": "Surya Karthik"
+        "creator": "Surya Karthik",
+        "color": "red"
     },
     {
         "header": "Professional Skills",
         "title": "IST Careers - Meet a Coach - Level 2",
         "img": "social:people",
-        "creator": "David Scheer"
+        "creator": "David Scheer",
+        "color": "green"
     },
     {
         "header": "Agriculture & Natural Resources",
         "title": "[test] Treat Yourself",
         "img": "social:cake",
-        "creator": "btopro"
+        "creator": "btopro",
+        "color": "orange"
     }
 
 
