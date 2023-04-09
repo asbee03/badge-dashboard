@@ -39,7 +39,7 @@ body {
     }
     .explore{
       text-align: left;
-      font-family: "Effra", sans-serif;
+      font-family: "Bradley Hand", serif;
       font-size: 30px;
       color: #000000;
       font-weight: lighter;
