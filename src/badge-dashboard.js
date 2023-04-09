@@ -102,7 +102,7 @@ export class BadgeDashboard extends LitElement {
     this.title = "APA Style Citations: Introduction ";
     this.creator = "Creator: Abhi Shah";
     this.img = "icons:book";
-    this.color = "blue";
+    this.color = "green";
   }
 
   render() {
