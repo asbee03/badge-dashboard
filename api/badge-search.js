@@ -22,7 +22,7 @@ export default async function handler(request, res){
         {
             "header": "Agriculture & Natural Resources",
             "title": "[test] Treat Yourself",
-            "img": "social:cake",
+            "img": "places:spa",
             "creator": "btopro"
         }
     ];
