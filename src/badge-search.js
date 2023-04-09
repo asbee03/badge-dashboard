@@ -78,6 +78,43 @@ body {
       display: block;
     }
 
+    .allButton{
+      padding: 12px;
+      font-size: 16px;
+      color: rgb(0,132,255);
+      background-color: white;
+      border: 2px solid lightgray;
+      
+    }
+    .missionsButton{
+      padding: 12px;
+      font-size: 16px;
+      color: rgb(0,132,255);
+      background-color: white;
+      border: 2px solid lightgray;
+    }
+    .groupsButton{
+      padding: 12px;
+      font-size: 16px;
+      color: rgb(0,132,255);
+      background-color: white;
+      border: 2px solid lightgray;
+    }
+    .badgesButton{
+      padding: 12px;
+      font-size: 16px;
+      color: rgb(0,132,255);
+      background-color: white;
+      border: 2px solid lightgray;
+    }
+    .peopleButton{
+      padding: 12px;
+      font-size: 16px;
+      color: rgb(0,132,255);
+      background-color: white;
+      border: 2px solid lightgray;
+    }
+
   `;
 
   constructor() {
@@ -113,10 +150,17 @@ body {
                             <div class="searchbar">
                                 <search-bar @word-changed="${this.wordChanged}"></search-bar>
                             </div>
-                    </div>       
+                          <p>
+
+                          </p>
+                          <button class="allButton">All</button>
+                          <button class="missionsButton">Missions</button>
+                         <button class="groupsButton">Groups</button>
+                         <button class="badgesButton">Badges</button>
+                         <button class="peopleButton">People</button>
+                    </div>      
 
                     <div class="square">
-                        <div class="badgeList">
                             <p>
                                 Looking for something brand spankin' new? Here are the most recently added badges!
                             </p>
