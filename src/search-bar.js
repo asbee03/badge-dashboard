@@ -1,48 +1,73 @@
-import { LitElement, html, css } from "lit";
+import { LitElement, html, css } from 'lit';
 import "@lrnwebcomponents/simple-icon/simple-icon.js";
 import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
 
-
-
-
- class Searchbar extends LitElement {
-   static properties = {
-	value: { type: String },
+class SearchBar extends LitElement {
+  static properties = {
+    topic: { type: String },
+    word: { type: String }
   }
 
-  static get styles(){
-    return css`
-    :host{
-      display: block; 
+  static styles = css`
+    :host {
+      
+    }
+    .searchbar {
+      box-shadow: 1px 1px 1px 2px gray;
+      margin-top: 5px;
+      width: 1000px;
+      border-radius: 5px;
+      padding: 2px;
+      
+    }
+    .searchInput {
+      width: 1200px;
+      height: 50px;
+      border-radius: 5px;
+    }
+    .icon{
+      width:100spx;
+    }
+  `;
 
+  constructor() {
+    super();
+    this.topic = 'Search Content, Topics, and People';
+    this.word = "";    
+  }
+
+  inputChange(e) {
+    this.word = this.shadowRoot.querySelector('input').value;
+  }
+
+  update(changedProperties) {
+    super.update(changedProperties);
+    if (changedProperties.has('word')) {
+      this.dispatchEvent(new CustomEvent('word-changed', {
+        detail: {
+          value: this.word
+        }
+      }));
     }
-    simple-icon {
-      display: inline-block;
-      --simple-icon-height: 24px; 
-      --simple-icon-width: 24px; 
-    }
+  }
+ 
+  render() {
+    return html`
+    <div class="searchbar">
+      <simple-icon class="searchIcon" accent-color="black" icon="search"></simple-icon><input type="text" id="searchbar" placeholder="${this.topic}" @input="${this.inputChange}" />
+      
+    </div>
+
+    
     `;
   }
+}
 
-  constructor(){
-    super();
-    this.value= 'Search Here!'; 
-  }
-render(){
-  return html`
-  <simple-icon icon="icons:search"></simple-icon>
-  <input type="text" value="${this.value}" @input="${this.handleInput}" />
-  
-  `;
-}
-handleInput(e){
-  this.value = e.detail.value; 
-  this.dispatchEvent(new CustomEvent('value-changed', {
-   detail: {
-    value: this.value,
-   }
-  })); 
-}
+
+
+
+
+customElements.define('search-bar', SearchBar);
 
 //harder search bar 
 
@@ -102,6 +127,3 @@ handleInput(e){
        
 //      `;
 //    }
- }
-
-customElements.define("search-bar", Searchbar);

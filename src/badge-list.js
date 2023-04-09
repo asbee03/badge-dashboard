@@ -1,74 +1,82 @@
-import { LitElement, html, css } from "lit";
-import "./badge-dashboard";
+import { LitElement, html, css } from 'lit';
+import "./badge-dashboard.js";
 
-export class Badges extends LitElement{
+export class BadgeList extends LitElement{
 
-    static get tag() {
-        return 'badge-list';
+    static get tag(){
+    return 'badge-list';
     }
 
     static get properties() {
-        return {
-            
-            badges: { type: Array },
-            search: { type: String }
+        return{
+            badges: {type: Array},
+            searchForThis: {type: String}
+
         }
     }
 
-    constructor() {
+    constructor(){
         super();
         this.badges = [];
-        this.updateRoster(this.search);
+        this.updateBadges();
+        this.searchForThis = '';
+        this.searchThis(this.badges,this.searchForThis);
     }
 
-    updateRoster(search) {
-        console.log(search);
-        const address = new URL('../assets/badge-map.json', import.meta.url).href;
+    updateBadges(){
+        const address = '../api/badge-search'
         fetch(address).then((response) => {
-            if (response.ok) {
+            if (response.ok){
                 return response.json()
             }
             return [];
         })
+
         .then((data) => {
             this.badges = data;
         });
     }
-    
-    updated(changedProperties) {
-        changedProperties.forEach((oldValue, propName) => {
-            if (propName === "search") {
-                this.updateRoster(this.search);
-            }
-        });
-    }
 
-
-    static get styles() {
+    static get styles(){
         return css`
-        :host {
+        :host{
             display: block;
         }
-        .wrapper {
-            width: 400px;
+        .wrapper{
             display: flex;
         }
-        .item {
-            display: inline-flex
+        .item{
+            display: inline-flex;
         }
         `;
+    }
+
+    searchThis(items, searchForThis){
+        return items.filter((thing) => 
+        {
+          for (var item in thing)
+          {
+            if (thing[item].toString().toLowerCase().includes(searchForThis.toLowerCase()))
+            {
+              return true;
+            }
+          }
+          return false;
+        });
     }
 
     render() {
         return html`
         <div class="wrapper">
-            ${this.badges.map(badge => html`
+        ${this.searchThis(this.badges,this.searchForThis).map(badge => html`
             <div class="item">
-                <badge-dashboard badgeTopTitle="${badge.badgeTopTitle}" badgePic="${badge.badgePic}" badgeTitleName="${badge.badgeTitleName}" badgeCreatorName="${badge.badgeCreatorName}"></badge-dashboard>
+            <badge-dashboard header="${badge.header}" img="${badge.img}" title="${badge.title}" creator="${badge.creator}"></badge-dashboard>
             </div>
             `)}
         </div>
         `;
     }
+
 }
-customElements.define(Badges.tag, Badges);
+
+customElements.define(BadgeList.tag, BadgeList);

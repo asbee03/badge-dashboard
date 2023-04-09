@@ -1,80 +1,72 @@
-import { LitElement, html, css } from "lit";
+import { LitElement, html, css } from 'lit';
+import "@lrnwebcomponents/simple-icon/simple-icon.js";
+import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
 
-class BadgeDashboard extends LitElement {
+const APAStyle = new URL('../assets/APA_Style.png', import.meta.url).href;
+
+export class BadgeDashboard extends LitElement {
   static properties = {
-    badgeTopTitle: {
-      type: String,
-      reflect: true,
-    },
-
-    badgePic: {
-      type: String,
-    },
-
-    badgeTitleName: {
-      type: String,
-      reflect: true,
-    },
-
-    badgeCreatorName: {
-      type: String,
-      reflect: true,
-    },
+    header: { type: String,
+    Reflect: true },
+    title: {type: String,
+      Reflect: true},
+    creator: {type: String,
+      Reflect: true},
+    img: {type: String,
+    Reflect: true}
   };
 
   static styles = css`
-    main {
-      padding: 20px;
-    }
-
-    .badge-all {
-      display: block;
-      letter-spacing: 0.02em;
-      float: left;
+    .badge {
+      letter-spacing: 0.02em; 
       height: 135px;
       width: 280px;
-      cursor: pointer;
-      text-decoration: none;
       position: relative;
-      font-weight: 300;
+      font-family: "Effra", sans-serif;
       font-size: 12px;
       line-height: 20px;
       margin: 0 10px 10px 0;
-      background: transparent;
+      background: transparent; 
       border: 1px solid #fff;
       border-color: #3e98d3;
-      border-radius: 6px;
+      border-radius: 5px;
+      border-width: 1px;
     }
-
-    .badge-top {
+    
+    .badge-header {
       background-color: #cfe6f4;
-      border-left: 15px solid #3b8fc6;
+      border-left: 15px solid #3e98d3;
       color: #333333;
-      font-weight: 400;
+      font-weight: bold, 500;
       height: 2.25em;
       line-height: 2.25em;
       padding: 0 0.75em;
+      border-radius: 4px 4px 0 0;
     }
-
     .badge-body {
       border-left: 15px solid #3e98d3;
-      vertical-align: top;
       padding: 10px 10px;
       overflow: hidden;
       position: relative;
-      font-weight: 400;
-      font-size: 15px;
+      font-size: 12px;
+      font-family: "effra", sans-serif;
       margin-bottom: 10px;
-    }
-
-    .badgepic {
-      float: right;
-      width: 60px;
-      height: 60px;
       display: block;
-      background-size: contain;
+      display: flex;
+      align-items: center;
     }
-
+    .badge-title{
+      font-weight: 100;
+      font-weight: lighter;
+      font-size: 22px;
+      letter-spacing: 1px;
+      font-family: "Effra", sans-serif;
+      width: 200px;
+      margin-right: 16px;
+    }
+    .badge-image {
+      width: 100px;
+    }
     .creator {
       border-left: 15px solid #3e98d3;
       position: absolute;
@@ -82,9 +74,9 @@ class BadgeDashboard extends LitElement {
       left: 0;
       right: 0;
       min-height: 30px;
+      border-radius: 0 0 4px 4px;
     }
-
-    .badge-creator-name {
+    .creator-name {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -93,56 +85,43 @@ class BadgeDashboard extends LitElement {
       margin-right: 15px;
       font-weight: 400;
       font-size: 13px;
+      font-family: "Effra", sans-serif;
     }
-    /*.box{
-      width: 200px;
-      height: 100px;
-      border: 1px solid black;
-      }*/
-      .container {
-        position: absolute;
-        height: 250px;
-        width: 400px;
-        background-color: #ffffff;
-      }
+
+    simple-icon {
+      --simple-icon-width:70px;
+      --simple-icon-height:70px;
+    }
   `;
 
   constructor() {
     super();
-    this.badgeTopTitle = "Technology & Information";
-    this.badgePic =
-      "https://badges.psu.edu/wp-content/uploads/sites/4454/2015/04/mortar_board_badge.png";
-    this.badgeTitleName = "APA Style Citations: Introduction";
-    this.badgeCreatorName = "Abhi Shah";
+    this.header = "Technology & Information";
+    this.title = "APA Style Citations: Introduction ";
+    this.creator = "Creator: Abhi Shah";
+    this.img = "https://badges.psu.edu/wp-content/uploads/sites/4454/2015/04/mortar_board_badge.png";
   }
-
 
   render() {
     return html`
-      <main>
-      <div class="container"></div>
-      
-        <div class="badge-all">
-          <div class="badge-top">
-            <span class="badge-top-title">${this.badgeTopTitle}</span>
-          </div>
-
-          <div class="badge-body">
-            <div class="badge-image">
-              <img class="badgepic" src=${this.badgePic} alt="badge" />
+          <div class="badge">
+              <div class="badge-header">
+                <span class="header">${this.header}</span>
+              </div>
+              <div class="badge-body">
+                <div class="badge-title">
+                  <div class="title">${this.title}</div>
+                </div>
+                <div class="badge-image">
+                  <simple-icon class="course-icon" accent-color="black" icon=${this.img}></simple-icon>
+                </div>
+              </div>
+              <div class="creator">
+                <div class="creator-name"> ${this.creator}</div>
+              </div>
             </div>
-            <h3>${this.badgeTitleName}</h3>
-          </div>
-
-          <div class="creator">
-            <div class="badge-creator-name">
-              Creator: ${this.badgeCreatorName}
-            </div>
-          </div>
-        </div>
-      </main>
     `;
   }
 }
 
-customElements.define("badge-dashboard", BadgeDashboard);
+customElements.define('badge-dashboard', BadgeDashboard);
