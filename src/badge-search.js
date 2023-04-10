@@ -49,6 +49,8 @@ body {
       border-color: white;
       text-align: left;
       font-family: "Effra", sans-serif;
+      font-size: 25px;
+      color: rgba(67,65,65,0.75);
       padding: 20px;
       border-width: 10px;
       width: 1300px;
@@ -84,35 +86,35 @@ body {
       color: rgb(0,132,255);
       background-color: white;
       border: 2px solid lightgray;
-      
+            
     }
     .missionsButton{
       padding: 12px;
       font-size: 16px;
       color: rgb(0,132,255);
       background-color: white;
-      border: 2px solid lightgray;
+      border: none;
     }
     .groupsButton{
       padding: 12px;
       font-size: 16px;
       color: rgb(0,132,255);
       background-color: white;
-      border: 2px solid lightgray;
+      border: none;
     }
     .badgesButton{
       padding: 12px;
       font-size: 16px;
       color: rgb(0,132,255);
       background-color: white;
-      border: 2px solid lightgray;
+      border: none;
     }
     .peopleButton{
       padding: 12px;
       font-size: 16px;
       color: rgb(0,132,255);
       background-color: white;
-      border: 2px solid lightgray;
+      border: none;
     }
 
   `;
