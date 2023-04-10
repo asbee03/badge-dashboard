@@ -13,7 +13,9 @@ export class BadgeDashboard extends LitElement {
     creator: {type: String,
       Reflect: true},
     img: {type: String,
-    Reflect: true}
+    Reflect: true},
+    color: {type: String,
+      Reflect: true},
   };
 
   static styles = css`
@@ -99,7 +101,8 @@ export class BadgeDashboard extends LitElement {
     this.header = "Technology & Information";
     this.title = "APA Style Citations: Introduction ";
     this.creator = "Creator: Abhi Shah";
-    this.img = "https://badges.psu.edu/wp-content/uploads/sites/4454/2015/04/mortar_board_badge.png";
+    this.img = "icons:book";
+    this.color = "green";
   }
 
   render() {
