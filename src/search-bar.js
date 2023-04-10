@@ -55,7 +55,7 @@ class SearchBar extends LitElement {
   render() {
     return html`
     <div class="searchbar">
-      <simple-icon class="searchIcon" accent-color="black" icon="search"></simple-icon><input type="text" class="no-outline" id="searchbar" size="183" placeholder="${this.topic}" @input="${this.inputChange}" />
+      <simple-icon class="searchIcon" accent-color="black" icon="search"></simple-icon><input type="text" class="no-outline" id="searchbar" size="180" placeholder="${this.topic}" @input="${this.inputChange}" />
     </div>
 
     `;
@@ -64,7 +64,7 @@ class SearchBar extends LitElement {
 
 customElements.define('search-bar', SearchBar);
 
-//harder search bar 
+//old fancier search bar
 
    //static styles = css`
      //.searchbar {
