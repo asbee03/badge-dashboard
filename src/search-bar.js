@@ -16,7 +16,7 @@ class SearchBar extends LitElement {
       box-shadow: 1px 1px 1px 2px gray;
       margin-top: 5px;
       width: 1280px;
-      height: 30px; 
+      height: 40px; 
       padding: 10px;
     
     }
@@ -55,7 +55,7 @@ class SearchBar extends LitElement {
   render() {
     return html`
     <div class="searchbar">
-      <simple-icon class="searchIcon" accent-color="black" icon="search"></simple-icon><input type="text" class="no-outline" id="searchbar" size="180" placeholder="${this.topic}" @input="${this.inputChange}" />
+      <simple-icon class="searchIcon" accent-color="black" icon="search"></simple-icon><input type="text" class="no-outline" id="searchbar" size="183" placeholder="${this.topic}" @input="${this.inputChange}" />
     </div>
 
     `;
