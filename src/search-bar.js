@@ -54,11 +54,10 @@ class SearchBar extends LitElement {
   render() {
     return html`
     <div class="searchbar">
-      <simple-icon class="searchIcon" accent-color="black" icon="search"></simple-icon><input type="text" id="searchbar" placeholder="${this.topic}" @input="${this.inputChange}" />
+      <simple-icon class="searchIcon" accent-color="black" icon="search"></simple-icon><input type="text" id="searchbar" size="185" placeholder="${this.topic}" @input="${this.inputChange}" />
       
     </div>
 
-    
     `;
   }
 }
